@@ -12,6 +12,9 @@ matrix:
   exclude:
   - os: osx
     env: BUILD=windows
+arch:
+  - amd64
+  - ppc64le
 install:
 - "./build-scripts/travis-ci.sh setup_qt"
 - "./build-scripts/travis-ci.sh get_quazip"
