@@ -30,7 +30,7 @@ case "$1" in
             wget https://www.dropbox.com/s/jr6l4lnixizqtln/travis-mxe-qt5.tar.gz
             tar -xvzf travis-mxe-qt5.tar.gz > /dev/null
         fi
-
+        mkdir -p $WORKING_DIR/mupen64plus-qt
         cd "$WORKING_DIR/mupen64plus-qt"
     ;;
 
