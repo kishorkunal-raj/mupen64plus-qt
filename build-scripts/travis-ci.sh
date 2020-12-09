@@ -1,7 +1,8 @@
 #!/bin/bash
 
 export WORKING_DIR=$HOME/build/dh4
-
+echo "==============================" 
+echo $TRAVIS_OS_NAME-$BUILD
 if [[ $1 == 'package' ]]; then
     VERSION=$(echo $TRAVIS_TAG | sed -e 's/v//g')
     [[ -z $VERSION ]] && VERSION='git-latest'
