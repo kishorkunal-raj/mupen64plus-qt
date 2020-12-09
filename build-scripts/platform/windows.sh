@@ -36,6 +36,7 @@ case "$1" in
 
         fi
         #mkdir -p $WORKING_DIR/mupen64plus-qt
+	ls
         cd "$WORKING_DIR/../$USER/mupen64plus-qt"
     ;;
 
