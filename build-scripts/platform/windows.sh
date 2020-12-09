@@ -43,7 +43,8 @@ case "$1" in
 
     'build')
         export PATH="$PATH:$WORKING_DIR/../mxe/usr/bin"
-
+	echo "$PATH ---------------- New mxe"
+        ls
         ./build-scripts/revision.sh
         i686-w64-mingw32.static-qmake-qt5
         make
