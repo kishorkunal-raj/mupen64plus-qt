@@ -11,11 +11,10 @@ case "$1" in
 
     'setup_qt')
         cd "$WORKING_DIR/../"
-        echo "Pwd is ---------------------> $WORKING_DIR/../"
-        echo "===========================$BUILD_MXE_QT"
+        echo "Pwd is ---------------------> $PWD"
+        echo "=========================== $BUILD_MXE_QT"
         if [[ $BUILD_MXE_QT ]]; then
             # Build Qt with mxe
-	    echo "===========================$BUILD_MXE_QT"
             sudo apt-get update -qq
             sudo apt-get install \
                 autoconf automake autopoint bash bison bzip2 cmake flex \
@@ -25,9 +24,11 @@ case "$1" in
                 unzip wget xz-utils libtool-bin lzip libgdk-pixbuf2.0-dev
             git clone https://github.com/mxe/mxe.git
             cd mxe
+	    echo "Pwd in if section ---------------------> $PWD"
             make qtbase
         else
             # Fetch pre-built mxe Qt
+	    echo "Pwd  else section is ---------------------> $PWD"
             wget https://www.dropbox.com/s/jr6l4lnixizqtln/travis-mxe-qt5.tar.gz
             tar -xvzf travis-mxe-qt5.tar.gz > /dev/null
         fi
@@ -36,6 +37,7 @@ case "$1" in
     ;;
 
     'get_quazip')
+	    echo "Pwd in quazip ---------------------> $PWD"
         wget http://downloads.sourceforge.net/quazip/quazip-0.7.3.tar.gz
         tar -xvzf quazip-0.7.3.tar.gz > /dev/null
         mv quazip-0.7.3/quazip quazip5
@@ -45,8 +47,8 @@ case "$1" in
         export PATH="$PATH:$WORKING_DIR/../mxe/usr/bin"
 	echo "$PATH ---------------- New mxe"
 	echo "working dir $WORKING_DIR"
-	echo "pwd========= $((pwd))"
-        ls $WORKING_DIR/..
+	echo "Pwd in build ---------------------> $PWD"
+        ls $WORKING_DIR/../
         ./build-scripts/revision.sh
         i686-w64-mingw32.static-qmake-qt5
         make
