@@ -43,17 +43,18 @@ case "$1" in
     ;;
 
     'get_quazip')
-	    echo "Pwd in quazip ---------------------> $PWD"
         wget http://downloads.sourceforge.net/quazip/quazip-0.7.3.tar.gz
         tar -xvzf quazip-0.7.3.tar.gz > /dev/null
         mv quazip-0.7.3/quazip quazip5
+	ls
+	echo "pwd ------>quazip ---> $(pwd)"
     ;;
 
     'build')
         export PATH="$PATH:$WORKING_DIR/../mxe/usr/bin"
 	echo "working dir $WORKING_DIR"
-	echo "Pwd in build ---------------------> $PWD"
-        ls $WORKING_DIR/../
+	echo "Pwd in build ---------------------> $(pwd)"
+        ls
         ./build-scripts/revision.sh
 	#cd $WORKING_DIR/../
         i686-w64-mingw32.static-qmake-qt5
