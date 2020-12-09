@@ -53,8 +53,13 @@ case "$1" in
     'build')
         export PATH="$PATH:$WORKING_DIR/../mxe/usr/bin"
 	echo "working dir $WORKING_DIR"
+	ls $WORKING_DIR
+	echo "WORKING_DIR/../"
+	ls $WORKING_DIR/../
 	echo "Pwd in build ---------------------> $(pwd)"
-        ls
+	ls $(pwd)
+	echo "Current directiorey"
+	ls
         ./build-scripts/revision.sh
 	#cd $WORKING_DIR/../
         i686-w64-mingw32.static-qmake-qt5
