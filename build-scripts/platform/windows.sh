@@ -11,6 +11,8 @@ case "$1" in
 
     'setup_qt')
         cd "$WORKING_DIR/../"
+	echo "WORKDIR ---> $WORKING_DIR"
+	echo "WORKING_DIR -------> $WORKING_DIR/../"
         echo "Pwd is ---------------------> $PWD"
         echo "=========================== $BUILD_MXE_QT"
         if [[ $BUILD_MXE_QT ]]; then
