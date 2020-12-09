@@ -64,7 +64,7 @@ case "$1" in
 	ls $(pwd)/mxe/usr/bin
         ./build-scripts/revision.sh
 	#cd $WORKING_DIR/../
-        i686-w64-mingw32.static-qmake-qt5
+        $(pwd)/mxe/usr/bin/i686-w64-mingw32.static-qmake-qt5
         make
     ;;
 
