@@ -4,7 +4,7 @@
 [[ -z $VERSION ]] && VERSION=$(git log --oneline -n 1 | awk '{print $1}')
 
 [[ -z $ARCH ]] && ARCH=".$(uname -m)"
-[[ $ARCH == ".x86_64" ]] && ARCH=""
+[[ $ARCH == ".x86_64"|"ppc64le" ]] && ARCH=""
 
 
 case "$1" in
