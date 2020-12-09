@@ -46,7 +46,7 @@ case "$1" in
 	echo "$PATH ---------------- New mxe"
 	echo "working dir $WORKING_DIR"
 	echo "pwd========= $((pwd))"
-        ls
+        ls $WORKING_DIR/..
         ./build-scripts/revision.sh
         i686-w64-mingw32.static-qmake-qt5
         make
