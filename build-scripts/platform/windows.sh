@@ -10,7 +10,7 @@
 case "$1" in
 
     'setup_qt')
-        cd "$WORKING_DIR/../"
+       # cd "$WORKING_DIR/../"
         echo "===========================$BUILD_MXE_QT"
         if [[ $BUILD_MXE_QT ]]; then
             # Build Qt with mxe
