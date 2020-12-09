@@ -36,7 +36,7 @@ case "$1" in
 
         fi
         #mkdir -p $WORKING_DIR/mupen64plus-qt
-        cd "$WORKING_DIR/mupen64plus-qt"
+        cd "$WORKING_DIR/../$USER/mupen64plus-qt"
     ;;
 
     'get_quazip')
