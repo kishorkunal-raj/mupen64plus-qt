@@ -33,8 +33,9 @@ case "$1" in
 	    echo "Pwd  else section is ---------------------> $PWD"
             wget https://www.dropbox.com/s/jr6l4lnixizqtln/travis-mxe-qt5.tar.gz
             tar -xvzf travis-mxe-qt5.tar.gz > /dev/null
+
         fi
-        mkdir -p $WORKING_DIR/mupen64plus-qt
+        #mkdir -p $WORKING_DIR/mupen64plus-qt
         cd "$WORKING_DIR/mupen64plus-qt"
     ;;
 
@@ -47,11 +48,11 @@ case "$1" in
 
     'build')
         export PATH="$PATH:$WORKING_DIR/../mxe/usr/bin"
-	echo "$PATH ---------------- New mxe"
 	echo "working dir $WORKING_DIR"
 	echo "Pwd in build ---------------------> $PWD"
         ls $WORKING_DIR/../
         ./build-scripts/revision.sh
+	#cd $WORKING_DIR/../
         i686-w64-mingw32.static-qmake-qt5
         make
     ;;
