@@ -4,16 +4,17 @@
 [[ -z $VERSION ]] && VERSION=$(git log --oneline -n 1 | awk '{print $1}')
 
 [[ -z $ARCH ]] && ARCH=".$(uname -m)"
-[[ $ARCH == ".x86_64" ]] && ARCH=""
+[[ $ARCH == ".x86_64" ]] || [[ $ARCH == "ppc64le" ]] && ARCH=""
 
 
 case "$1" in
 
     'setup_qt')
         cd "$WORKING_DIR/../"
-
+        echo "===========================$BUILD_MXE_QT"
         if [[ $BUILD_MXE_QT ]]; then
             # Build Qt with mxe
+	    echo "===========================$BUILD_MXE_QT"
             sudo apt-get update -qq
             sudo apt-get install \
                 autoconf automake autopoint bash bison bzip2 cmake flex \
