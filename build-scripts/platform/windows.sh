@@ -51,7 +51,7 @@ case "$1" in
     ;;
 
     'build')
-        export PATH="$PATH:$WORKING_DIR/../mxe/usr/bin"
+	    export PATH="$PATH:$WORKING_DIR/mxe/usr/bin"
 	echo "working dir $WORKING_DIR"
 	ls $WORKING_DIR
 	echo "WORKING_DIR/../"
